@@ -1,0 +1,190 @@
+<mvc:View
+    controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+
+    <Page title="Gate Entry Form">
+
+        <content>
+
+            <!-- CARD CONTAINER -->
+                <form:SimpleForm
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    class="customForm">
+
+            <HBox width="100%" justifyContent="SpaceAround">
+            <VBox width="35%">
+           <Label text="Purchase Order No"/>
+                    <Select
+                        id="poSelect"
+                        width="100%"
+                        items="{ path: '/PurchaseOrders' }"
+                        change="onPOChange">
+                        <core:Item key="{ID}" text="{poNumber}"/>
+                    </Select>
+
+                    <Label text="E-Way Bill Number"/>
+                    <Input value="{viewModel>/ewayBillNumber}"/>
+
+                      <Label text="Delivery Order No"/>
+                    <Input value="{viewModel>/deliveryOrderNo}"/>
+
+                    <Label text="RGP Outward G.E No"/>
+                    <Input value="{viewModel>/rgpOutwardGENo}"/>
+
+                     <Label text="RGP Type"/>
+                    <Select width="100%">
+                        <items>
+                            <core:Item key="" text="-- SELECT --"/>
+                        </items>
+                    </Select>
+
+                    <Label text="Vehicle Number"/>
+                    <Input value="{viewModel>/vehicleNumber}"/>
+
+                     <Label text="Transporter Name"/>
+                    <Input value="{viewModel>/transporterName}"/>
+
+                    <Label text="Challan Number"/>
+                    <Input value="{viewModel>/challanNumber}"/>
+
+                    <Label text="Challan Date"/>
+                    <DatePicker width="100%" value="{viewModel>/challanDate}"/>
+
+                     <Label text="LR Number"/>
+                    <Input value="{viewModel>/lrNumber}"/>
+
+                     <Label text="LR Date"/>
+                    <DatePicker width="100%" value="{viewModel>/lrDate}"/>
+
+                     <Label text="Due Date"/>
+                    <DatePicker width="100%" value="{viewModel>/dueDate}"/>
+
+                     <Label text="Party Name"/>
+                    <Input value="{viewModel>/partyName}"/>
+                    
+
+            </VBox>
+                    
+
+            <VBox width="35%">
+
+             <Label text="Vendor Name"/>
+                    <Input value="{viewModel>/vendorName}" editable="false"/>
+         <Label text="Sold To Party"/>
+                    <Input value="{viewModel>/soldToParty}"/>
+
+                    <Label text="Ship To Party"/>
+                    <Input value="{viewModel>/shipToParty}"/>
+
+                    <Label text="Driver Name"/>
+                    <Input value="{viewModel>/driverName}"/>
+
+                     <Label text="Driver Mobile Number"/>
+                    <Input value="{viewModel>/driverMobileNumber}"/>
+
+             <Label text="Driver License No"/>
+                    <Input value="{viewModel>/driverLicenseNo}"/>
+
+                    
+
+                    <Label text="Container Number"/>
+                    <Input value="{viewModel>/containerNumber}"/>
+
+                   
+
+                    <Label text="Employee Name"/>
+                    <Input value="{viewModel>/employeeName}"/>
+
+                    
+
+                    <Label text="Freight Condition"/>
+                    <Input value="{viewModel>/freightCondition}"/>
+
+                    
+
+                    <Label text="Challan Gross Weight"/>
+                    <Input value="{viewModel>/challanGrossWeight}"/>
+
+                   
+
+                    <Label text="Challan Tare Weight"/>
+                    <Input value="{viewModel>/challanTareWeight}"/>
+
+                   
+
+                    <Label text="Challan Net Weight"/>
+                    <Input value="{viewModel>/challanNetWeight}"/>
+
+                   
+
+                   
+            </VBox>
+
+            </HBox>
+                </form:SimpleForm>
+            <VBox>
+            <Label text="Remarks"/>
+                    <TextArea
+                        value="{viewModel>/remark}"
+                        rows="3"
+                        width="100%"/>
+
+            </VBox>
+            
+
+                <!-- TABLE HEADER -->
+                <Title text="Items" level="H4" class="sapUiSmallMarginTop"/>
+
+                <!-- TABLE -->
+                <Table
+                    id="itemsTable"
+                    items="{viewModel>/items}"
+                    growing="true"
+                    class="sapUiSmallMarginTop customTable">
+
+                    <columns>
+                        <Column width="4rem"><Text text="S.No."/></Column>
+                        <Column width="5rem"><Text text="Item No."/></Column>
+                        <Column><Text text="Material"/></Column>
+                        <Column><Text text="Material Description"/></Column>
+                        <Column><Text text="Order Qty"/></Column>
+                        <Column><Text text="Qty"/></Column>
+                        <Column><Text text="UOM"/></Column>
+                        <Column><Text text="Rate"/></Column>
+                        <Column><Text text="Batch No"/></Column>
+                        <Column><Text text="PKG Name"/></Column>
+                        <Column><Text text="PKG Wt."/></Column>
+                        <Column><Text text="No Of PKG"/></Column>
+                        <Column><Text text="Total PKG Wt."/></Column>
+                    </columns>
+
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{= ${$index} + 1 }"/>
+                                <Text text="{viewModel>itemNo}"/>
+                                <Text text="{viewModel>material}"/>
+                                <Text text="{viewModel>materialDesc}"/>
+                                <Text text="{viewModel>orderQty}"/>
+                                <Input value="{viewModel>qty}"/>
+                                <Text text="{viewModel>uom}"/>
+                                <Text text="{viewModel>rate}"/>
+                                <Text text="{viewModel>batchNo}"/>
+                                <Text text="{viewModel>pkgName}"/>
+                                <Text text="{viewModel>pkgWeight}"/>
+                                <Text text="{viewModel>noOfPkg}"/>
+                                <Text text="{viewModel>totalPkgWeight}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+
+                </Table>
+
+        </content>
+
+    </Page>
+</mvc:View>

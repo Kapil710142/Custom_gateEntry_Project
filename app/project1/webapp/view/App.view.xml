@@ -1,0 +1,14 @@
+<mvc:View controllerName="project1.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+     <App id="app">
+    <GenericTile id="_IDGenGenericTile" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Create Gate Entry Form"
+		subheader="Click to open Gate Entry Form " press="createForm" url="https://www.sap.com/">
+		<TileContent id="_IDGenTileContent">
+			<ImageContent id="_IDGenImageContent" src="attachment/SAP-Logo-History-1.png" />
+		</TileContent>
+	</GenericTile>
+    </App>
+
+</mvc:View>

@@ -1,0 +1,20 @@
+/* Enter your custom styles here */.customForm {
+    background: white;
+    width: 90%;
+    padding: 1rem;
+    margin: 1rem 1rem 1rem 0rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.customTable {
+    background: white;
+    border-radius: 8px;
+}
+
+.sapMLabel {
+    font-weight: 600;
+}
+body{
+    padding: 1%;
+}

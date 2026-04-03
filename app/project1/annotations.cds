@@ -1,0 +1,1 @@
+using GateEntryService as service from '../../srv/service';
